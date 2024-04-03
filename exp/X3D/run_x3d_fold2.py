@@ -83,8 +83,8 @@ def main():
     print(k_flod_dash_probs_x3d[0].keys())
 
     for right_vid in k_flod_right_probs_x3d[0].keys():
-        dash_vid = "Dashboard_" + re.search("user_id_[0-9]{5}_NoAudio_[0-9]", right_vid)[0]
-        rear_vid = "Rear_view_" + re.search("user_id_[0-9]{5}_NoAudio_[0-9]", right_vid)[0]
+        dash_vid = "Dashboard_" + re.search("user_id_[0-9]{5}_NoAudio_[0-9]{1,2}", right_vid)[0]
+        rear_vid = "Rear_view_" + re.search("user_id_[0-9]{5}_NoAudio_[0-9]{1,2}", right_vid)[0]
         all_dash_probs_x3d = np.stack([np.array(list(map(np.array, dash_prob[dash_vid]))) for dash_prob in k_flod_dash_probs_x3d])
         all_right_probs_x3d = np.stack([np.array(list(map(np.array, right_prob[right_vid]))) for right_prob in k_flod_right_probs_x3d])
         all_rear_probs_x3d = np.stack([np.array(list(map(np.array, rear_prob[rear_vid]))) for rear_prob in k_flod_rear_probs_x3d])
