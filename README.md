@@ -3,6 +3,7 @@
 ## Setup
 ### Run from conda
 conda env create -f environment.yml
+
 conda activate anomaly
 
 ### Run from Docker
@@ -16,7 +17,14 @@ To get cut videos for training, please download it from this link ...
 To train X3D, follow the bellow steps:
 ```bash
 cd X3D_train
+# Step 1: Generate video_ids for inference
+cd A2
+python generate_test_ids.py --test_path B
+# Step 2: Train X3D
 bash train.sh
+# Step 3: Rename and move checkpoints
+python move_ckpt.py
+# Step 4: Infer X3D
 bash infer.sh
 ```
 
@@ -33,7 +41,7 @@ To be released.
 If you find our work useful, please cite the following:
 
 ## Contact
-If you have any questions, feel free to contact 'Hung Nguyen' ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
+If you have any questions, feel free to contact 'Huy-Hung Nguyen' ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi Dai Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
 
 ##  Acknowledgement
 Our framework is built using multiple open source, thanks for their great contributions.
