@@ -51,6 +51,13 @@ python move_ckpt.py
 bash scripts/cls/inference_cls.sh
 ```
 
+### Ensemble
+To ensemble four models, follow the code snippets bellow:
+```bash
+cd infer
+python run_submission_ensemble.py
+```
+
 ## Citation
 If you find our work useful, please cite the following:
 

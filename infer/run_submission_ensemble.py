@@ -8,31 +8,12 @@ import util_loc
 warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.set_option('mode.chained_assignment', None)
 
-_FILENAME_TO_ID = {'Rear_view_user_id_12670_NoAudio_5': 1, 'Rear_view_user_id_12670_NoAudio_7': 2, 'Rear_view_user_id_13148_NoAudio_5': 3, 'Rear_view_user_id_13148_NoAudio_7': 4,
-                   'Rear_view_user_id_15198_NoAudio_5': 5, 'Rear_view_user_id_15198_NoAudio_7': 6, 'Rear_view_user_id_22530_NoAudio_5': 7, 'Rear_view_user_id_22530_NoAudio_7': 8,
-                   'Rear_view_user_id_26223_NoAudio_3': 9, 'Rear_view_user_id_26223_NoAudio_5': 10, 'Rear_view_user_id_33508_NoAudio_5': 11, 'Rear_view_user_id_33508_NoAudio_7': 12,
-                   'Rear_view_user_id_42897_NoAudio_5': 13, 'Rear_view_user_id_42897_NoAudio_7': 14, 'Rear_view_user_id_49989_NoAudio_5': 15, 'Rear_view_user_id_49989_NoAudio_7': 16,
-                   'Rear_view_user_id_51953_NoAudio_3': 17, 'Rear_view_user_id_51953_NoAudio_7': 18, 'Rear_view_user_id_65840_NoAudio_5': 19, 'Rear_view_user_id_65840_NoAudio_7': 20,
-                   'Rear_view_user_id_78826_NoAudio_5': 21, 'Rear_view_user_id_78826_NoAudio_7': 22, 'Rear_view_user_id_81902_NoAudio_5': 23, 'Rear_view_user_id_81902_NoAudio_7': 24,
-                   'Rear_view_user_id_87837_NoAudio_5': 25, 'Rear_view_user_id_87837_NoAudio_7': 26, 'Rear_view_user_id_94265_NoAudio_5': 27, 'Rear_view_user_id_94265_NoAudio_7': 28,
-                   'Rear_view_user_id_96715_NoAudio_5': 29, 'Rear_view_user_id_96715_NoAudio_7': 30, 'Dashboard_user_id_12670_NoAudio_5': 1, 'Dashboard_user_id_12670_NoAudio_7': 2,
-                   'Dashboard_user_id_13148_NoAudio_5': 3, 'Dashboard_user_id_13148_NoAudio_7': 4, 'Dashboard_user_id_15198_NoAudio_5': 5, 'Dashboard_user_id_15198_NoAudio_7': 6,
-                   'Dashboard_user_id_22530_NoAudio_5': 7, 'Dashboard_user_id_22530_NoAudio_7': 8, 'Dashboard_user_id_26223_NoAudio_3': 9, 'Dashboard_user_id_26223_NoAudio_5': 10,
-                   'Dashboard_user_id_33508_NoAudio_5': 11, 'Dashboard_user_id_33508_NoAudio_7': 12, 'Dashboard_user_id_42897_NoAudio_5': 13, 'Dashboard_user_id_42897_NoAudio_7': 14,
-                   'Dashboard_user_id_49989_NoAudio_5': 15, 'Dashboard_user_id_49989_NoAudio_7': 16, 'Dashboard_user_id_51953_NoAudio_3': 17, 'Dashboard_user_id_51953_NoAudio_7': 18,
-                   'Dashboard_user_id_65840_NoAudio_5': 19, 'Dashboard_user_id_65840_NoAudio_7': 20, 'Dashboard_user_id_78826_NoAudio_5': 21, 'Dashboard_user_id_78826_NoAudio_7': 22,
-                   'Dashboard_user_id_81902_NoAudio_5': 23, 'Dashboard_user_id_81902_NoAudio_7': 24, 'Dashboard_user_id_87837_NoAudio_5': 25, 'Dashboard_user_id_87837_NoAudio_7': 26,
-                   'Dashboard_user_id_94265_NoAudio_5': 27, 'Dashboard_user_id_94265_NoAudio_7': 28, 'Dashboard_user_id_96715_NoAudio_5': 29, 'Dashboard_user_id_96715_NoAudio_7': 30,
-                   'Right_side_window_user_id_12670_NoAudio_5': 1, 'Right_side_window_user_id_12670_NoAudio_7': 2, 'Right_side_window_user_id_13148_NoAudio_5': 3,
-                   'Right_side_window_user_id_13148_NoAudio_7': 4, 'Right_side_window_user_id_15198_NoAudio_5': 5, 'Right_side_window_user_id_15198_NoAudio_7': 6,
-                   'Right_side_window_user_id_22530_NoAudio_5': 7, 'Right_side_window_user_id_22530_NoAudio_7': 8, 'Right_side_window_user_id_26223_NoAudio_3': 9,
-                   'Right_side_window_user_id_26223_NoAudio_5': 10, 'Right_side_window_user_id_33508_NoAudio_5': 11, 'Right_side_window_user_id_33508_NoAudio_7': 12,
-                   'Right_side_window_user_id_42897_NoAudio_5': 13, 'Right_side_window_user_id_42897_NoAudio_7': 14, 'Right_side_window_user_id_49989_NoAudio_5': 15,
-                   'Right_side_window_user_id_49989_NoAudio_7': 16, 'Right_side_window_user_id_51953_NoAudio_3': 17, 'Right_side_window_user_id_51953_NoAudio_7': 18,
-                   'Right_side_window_user_id_65840_NoAudio_5': 19, 'Right_side_window_user_id_65840_NoAudio_7': 20, 'Right_side_window_user_id_78826_NoAudio_5': 21,
-                   'Right_side_window_user_id_78826_NoAudio_7': 22, 'Right_side_window_user_id_81902_NoAudio_5': 23, 'Right_side_window_user_id_81902_NoAudio_7': 24,
-                   'Right_side_window_user_id_87837_NoAudio_5': 25, 'Right_side_window_user_id_87837_NoAudio_7': 26, 'Right_side_window_user_id_94265_NoAudio_5': 27,
-                   'Right_side_window_user_id_94265_NoAudio_7': 28, 'Right_side_window_user_id_96715_NoAudio_5': 29, 'Right_side_window_user_id_96715_NoAudio_7': 30}
+_FILENAME_TO_ID = dict()
+data = pd.read_csv(os.path.join("data/B/", "video_ids.csv"))
+for idx, row_data in data.iterrows():
+    _FILENAME_TO_ID[row_data[1].split(".")[0]] = row_data[0]
+    _FILENAME_TO_ID[row_data[2].split(".")[0]] = row_data[0]
+    _FILENAME_TO_ID[row_data[3].split(".")[0]] = row_data[0]
 
 def get_classification(sequence_class_prob):
     labels_index = np.argmax(sequence_class_prob, axis=1)
@@ -116,7 +97,7 @@ def main():
     k_flod_right_probs_uniformer_full = load_k_fold_probs(pickle_dir_uniformer_full, "right")
     k_flod_rear_probs_uniformer_full = load_k_fold_probs(pickle_dir_uniformer_full, "rear")
 
-    pickle_dir_x3d = "pickles_X3D/A2"
+    pickle_dir_x3d = "pickles_x3d/A2"
     k_flod_dash_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "dash")
     k_flod_right_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "right")
     k_flod_rear_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "rear")
