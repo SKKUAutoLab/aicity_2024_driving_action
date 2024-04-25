@@ -10,7 +10,9 @@ conda activate anomaly
 To be released.
 
 ## 2. Dataset preparation
-To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data, VideoMAE_train/data
+To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data, and UniformerV2_1_train/data.
+
+To get custom cut videos for training UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1HFxKcY0RFh1UJBH00PAHOqrlhI6w8UX9/view?usp=sharing). After downloading, extract the file and put it to folder UniformerV2_2_train/data.
 
 ## 3. Dataset structure
 ### 3.1 X3D
@@ -18,63 +20,84 @@ The AI City dataset is organized with the following structure:
 ```
 X3D_train
 |_ A2
-|  |_ user_id_12670
-|  |  |_ *.mp4
-|  |_ user_id_13148
-|  |  |_ *.mp4
-|  |_ ...
-|  |  |_ *.mp4
-|  |_ user_id_96715
-|     |_ *.mp4
+   |_ user_id_12670
+   |  |_ *.mp4
+   |_ user_id_13148
+   |  |_ *.mp4
+   |_ ...
+   |  |_ *.mp4
+   |_ user_id_96715
+      |_ *.mp4
 |_ data
-|  |_ A1_clip
-|     |_ 0
-|     |  |_ *.mp4
-|     |_ 1
-|     |  |_ *.mp4
-|     |_ ...
-|     |  |_ *.mp4
-|     |_ 15
-|        |_ *.mp4
+   |_ A1_clip
+      |_ 0
+      |  |_ *.mp4
+      |_ 1
+      |  |_ *.mp4
+      |_ ...
+      |  |_ *.mp4
+      |_ 15
+         |_ *.mp4
 ```
 
 ### 3.2 UniformerV2_1
 To be released.
 
 ### 3.3 UniformerV2_2
-To be released.
+```
+UniformerV2_2_train
+|_ A2
+   |_ user_id_12670
+   |  |_ *.mp4
+   |_ user_id_13148
+   |  |_ *.mp4
+   |_ ...
+   |  |_ *.mp4
+   |_ user_id_96715
+      |_ *.mp4
+|_ data
+   |_ A1_clip_custom
+      |_ 0
+      |  |_ *.mp4
+      |_ 1
+      |  |_ *.mp4
+      |_ 2
+      |  |_ *.mp4
+      |_ 3
+         |_ *.mp4
+```
 
 ### 3.4 VideoMAE
 ```
 VideoMAE_train
 |_ A1
-|  |_ user_id_13522
-|  |  |_ *.mp4
-|  |_ user_id_14786
-|  |  |_ *.mp4
-|  |_ ...
-|  |  |_ *.mp4
-|  |_ user_id_99882
-|     |_ *.mp4
+   |_ user_id_13522
+   |  |_ *.mp4
+   |_ user_id_14786
+   |  |_ *.mp4
+   |_ ...
+   |  |_ *.mp4
+   |_ user_id_99882
+      |_ *.mp4
 |_ data
-|  |_ A1_clip
-|     |_ 0
-|     |  |_ *.mp4
-|     |_ 1
-|     |  |_ *.mp4
-|     |_ ...
-|     |  |_ *.mp4
-|     |_ 15
-|        |_ *.mp4
+   |_ A1_clip
+      |_ 0
+      |  |_ *.mp4
+      |_ 1
+      |  |_ *.mp4
+      |_ ...
+      |  |_ *.mp4
+      |_ 15
+         |_ *.mp4
 |_ A2
-|  |_ user_id_12670
-|  |  |_ *.mp4
-|  |_ user_id_13148
-|  |  |_ *.mp4
-|  |_ ...
-|  |  |_ *.mp4
-|  |_ user_id_96715
-|     |_ *.mp4
+   |_ user_id_12670
+   |  |_ *.mp4
+   |_ user_id_13148
+   |  |_ *.mp4
+   |_ ...
+   |  |_ *.mp4
+   |_ user_id_96715
+      |_ *.mp4
 ```
 
 ## 4. Usage
@@ -99,7 +122,16 @@ bash infer.sh
 To be released.
 
 #### 4.1.3 UniformerV2_2
-To be released.
+To train UniformerV2_2, follow the code snippets bellow:
+```bash
+cd UniformerV2_2
+# Step 1: Train UniformerV2_2
+bash train.sh
+# Step 2: Rename and move checkpoints
+python move_ckpt.py
+# Step 3: Infer UniformerV2_2
+bash infer.sh
+```
 
 #### 4.1.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
