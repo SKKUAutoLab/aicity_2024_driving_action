@@ -1,7 +1,7 @@
 # This is the solution for track 3 of the AI City Challenge 2024
 
 ## 1. Setup
-### 1. Run from conda
+### 1.1 Run from conda
 conda env create -f environment.yml
 
 conda activate anomaly
@@ -44,7 +44,7 @@ To be released.
 ### 3.3 UniformerV2_2
 To be released.
 
-# 3.4 VideoMAE
+### 3.4 VideoMAE
 ```
 VideoMAE_train
 |_ data
