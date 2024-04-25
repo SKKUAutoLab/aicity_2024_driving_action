@@ -140,9 +140,9 @@ def main(cfg, data_path, csv_file, sampling_rate, clip_stride, crop, view, fold,
     # save inference results to pickle for post-processing
     for file_name in unique_names:
         vmae_16x4[file_name] = np.asarray(results.get_group(str(file_name))["prob"])
-    output_dir = 'pickles_X3D/A2'
+    output_dir = 'pickles_x3d/A2'
     if not os.path.exists(output_dir):
-        os.makedirs('pickles_X3D/A2')
+        os.makedirs('pickles_x3d/A2')
     with open(os.path.join(output_dir, "A2_{}_vmae_16x4_crop_fold{}.pkl".format(view, fold)), "wb") as f:
         pickle.dump(vmae_16x4, f)
 
@@ -155,7 +155,7 @@ if __name__ == '__main__':
     checkpoint_dashboard_list = []
     checkpoint_rearview_list = []
     checkpoint_right_list = []
-    path_saved_ckpt = natsorted(glob.glob('checkpoint_submit/*.pyth'))
+    path_saved_ckpt = natsorted(glob.glob('checkpoint_x3d/*.pyth'))
     for i in range(len(path_saved_ckpt)):
         if path_saved_ckpt[i].split('/')[-1].split('_')[0] == 'dashboard':
             checkpoint_dashboard_list.append(path_saved_ckpt[i])

@@ -14,12 +14,13 @@ To get cut videos for training, please download it from this link ...
 
 ## Usage
 ### X3D
-To train X3D, follow the bellow steps:
+To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
 # Step 1: Generate video_ids for inference
 cd A2
-python generate_test_ids.py --test_path B
+python generate_test_ids.py --test_path A2/
+cd ..
 # Step 2: Train X3D
 bash train.sh
 # Step 3: Rename and move checkpoints
@@ -35,7 +36,20 @@ To be released.
 To be released.
 
 ### VideoMAE
-To be released.
+To train VideoMAE, follow the code snippets bellow:
+```bash
+cd VideoMAE_train
+# Step 1: Train VideoMAE
+bash scripts/cls/train_fold0.sh
+bash scripts/cls/train_fold1.sh
+bash scripts/cls/train_fold2.sh
+bash scripts/cls/train_fold3.sh
+bash scripts/cls/train_fold4.sh
+# Step 2: Rename and move checkpoints
+python move_ckpt.py
+# Step 3: Infer VideoMAE
+bash scripts/cls/inference_cls.sh
+```
 
 ## Citation
 If you find our work useful, please cite the following:
