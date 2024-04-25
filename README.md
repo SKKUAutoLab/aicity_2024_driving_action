@@ -10,7 +10,63 @@ conda activate anomaly
 To be released.
 
 ## Dataset preparation
-To get cut videos for training, please download it from this link ... 
+To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data
+
+## Dataset directories
+### X3D
+The AI City dataset is organized with the following structure:
+```
+X3D
+|_ A2
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|     |_ *.mp4
+|_ data
+|  |_ A1_clip
+|     |_ 0
+|     |  |_ *.mp4
+|     |_ 1
+|     |  |_ *.mp4
+|     |_ ...
+|     |  |_ *.mp4
+|     |_ 15
+|        |_ *.mp4
+```
+
+### UniformerV2_1
+To be released.
+
+### UniformerV2_2
+To be released.
+
+# VideoMAE
+```
+VideoMAE
+|_ data
+|  |_ A1_clip
+|     |_ 0
+|     |  |_ *.mp4
+|     |_ 1
+|     |  |_ *.mp4
+|     |_ ...
+|     |  |_ *.mp4
+|     |_ 15
+|        |_ *.mp4
+|_ A2
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|     |_ *.mp4
+```
 
 ## Usage
 ### X3D
