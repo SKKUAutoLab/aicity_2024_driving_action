@@ -1,22 +1,22 @@
 # This is the solution for track 3 of the AI City Challenge 2024
 
-## Setup
-### Run from conda
+## 1. Setup
+### 1. Run from conda
 conda env create -f environment.yml
 
 conda activate anomaly
 
-### Run from Docker
+### 1.2 Run from Docker
 To be released.
 
-## Dataset preparation
-To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data
+## 2. Dataset preparation
+To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data, Video_train/data
 
-## Dataset directories
-### X3D
+## 3. Dataset structure
+### 3.1 X3D
 The AI City dataset is organized with the following structure:
 ```
-X3D
+X3D_train
 |_ A2
 |  |_ user_id_12670
 |  |  |_ *.mp4
@@ -38,15 +38,15 @@ X3D
 |        |_ *.mp4
 ```
 
-### UniformerV2_1
+### 3.2 UniformerV2_1
 To be released.
 
-### UniformerV2_2
+### 3.3 UniformerV2_2
 To be released.
 
-# VideoMAE
+# 3.4 VideoMAE
 ```
-VideoMAE
+VideoMAE_train
 |_ data
 |  |_ A1_clip
 |     |_ 0
@@ -68,8 +68,8 @@ VideoMAE
 |     |_ *.mp4
 ```
 
-## Usage
-### X3D
+## 4. Usage
+### 4.1 X3D
 To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
@@ -85,13 +85,13 @@ python move_ckpt.py
 bash infer.sh
 ```
 
-### UniformerV2_1
+### 4.2 UniformerV2_1
 To be released.
 
-### UniformerV2_2
+### 4.3 UniformerV2_2
 To be released.
 
-### VideoMAE
+### 4.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
 cd VideoMAE_train
@@ -107,20 +107,20 @@ python move_ckpt.py
 bash scripts/cls/inference_cls.sh
 ```
 
-### Ensemble
+### 5. Ensemble model
 To ensemble four models, follow the code snippets bellow:
 ```bash
 cd infer
 python run_submission_ensemble.py
 ```
 
-## Citation
+## 6. Citation
 If you find our work useful, please cite the following:
 
-## Contact
+## 7. Contact
 If you have any questions, feel free to contact 'Huy-Hung Nguyen' ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi Dai Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
 
-##  Acknowledgement
+##  8. Acknowledgement
 Our framework is built using multiple open source, thanks for their great contributions.
 <!--ts-->
 * [VTCC-uTVM/2022AICityChallenge-Track3](https://github.com/VTCC-uTVM/2022AICityChallenge-Track3)
