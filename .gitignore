@@ -1,2 +1,4 @@
 __pycache__/
 VideoMAE_train/pretrained_models
+UniformerV2_2/k710_uniformerv2_l14_8x336.pyth
+UniformerV2_2/vit_saved

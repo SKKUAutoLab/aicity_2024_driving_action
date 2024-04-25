@@ -10,7 +10,7 @@ conda activate anomaly
 To be released.
 
 ## 2. Dataset preparation
-To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data, Video_train/data
+To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to X3D_train/data, VideoMAE_train/data
 
 ## 3. Dataset structure
 ### 3.1 X3D
@@ -47,6 +47,15 @@ To be released.
 ### 3.4 VideoMAE
 ```
 VideoMAE_train
+|_ A1
+|  |_ user_id_13522
+|  |  |_ *.mp4
+|  |_ user_id_14786
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_99882
+|     |_ *.mp4
 |_ data
 |  |_ A1_clip
 |     |_ 0
@@ -69,7 +78,8 @@ VideoMAE_train
 ```
 
 ## 4. Usage
-### 4.1 X3D
+### 4.1 For conda
+#### 4.1.1 X3D
 To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
@@ -85,13 +95,13 @@ python move_ckpt.py
 bash infer.sh
 ```
 
-### 4.2 UniformerV2_1
+#### 4.1.2 UniformerV2_1
 To be released.
 
-### 4.3 UniformerV2_2
+#### 4.1.3 UniformerV2_2
 To be released.
 
-### 4.4 VideoMAE
+#### 4.1.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
 cd VideoMAE_train
@@ -107,6 +117,9 @@ python move_ckpt.py
 bash scripts/cls/inference_cls.sh
 ```
 
+### 4.2 For docker
+To be released.
+
 ### 5. Ensemble model
 To ensemble four models, follow the code snippets bellow:
 ```bash
@@ -116,6 +129,15 @@ python run_submission_ensemble.py
 
 ## 6. Citation
 If you find our work useful, please cite the following:
+```
+@inproceedings{nguyen2024multi,
+  title={Multi-View Spatial-Temporal Learning for Understanding Unusual Behaviors in Untrimmed Naturalistic Driving Videos},
+  author={Huy-Hung Nguyen, Chi Dai Tran, Long Hoang Pham, Duong Nguyen-Ngoc Tran, Tai Huu-Phuong Tran, Duong Khac Vu, Quoc Pham-Nam Ho, Ngoc Doan-Minh Huynh, Huyng-Min Jeon, Hyung-Joon Jeon, Jae Wook Jeon},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={x--x},
+  year={2024}
+}
+```
 
 ## 7. Contact
 If you have any questions, feel free to contact 'Huy-Hung Nguyen' ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi Dai Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
