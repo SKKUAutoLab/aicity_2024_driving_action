@@ -20,84 +20,105 @@ The AI City dataset is organized with the following structure:
 ```
 X3D_train
 |_ A2
-   |_ user_id_12670
-   |  |_ *.mp4
-   |_ user_id_13148
-   |  |_ *.mp4
-   |_ ...
-   |  |_ *.mp4
-   |_ user_id_96715
-      |_ *.mp4
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|  |  |_ *.mp4
 |_ data
-   |_ A1_clip
-      |_ 0
-      |  |_ *.mp4
-      |_ 1
-      |  |_ *.mp4
-      |_ ...
-      |  |_ *.mp4
-      |_ 15
-         |_ *.mp4
+|  |_ A1_clip
+|  |  |_ 0
+|  |  |  |_ *.mp4
+|  |  |_ 1
+|  |  |  |_ *.mp4
+|  |  |_ ...
+|  |  |  |_ *.mp4
+|  |  |_ 15
+|  |  |  |_ *.mp4
 ```
 
 ### 3.2 UniformerV2_1
-To be released.
+```
+UniformerV2_2_train
+|_ A2
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|  |  |_ *.mp4
+|_ data
+|  |_ A1_clip
+|  |  |_ 0
+|  |  |  |_ *.mp4
+|  |  |_ 1
+|  |  |  |_ *.mp4
+|  |  |_ ...
+|  |  |  |_ *.mp4
+|  |  |_ 15
+|  |  |  |_ *.mp4
+```
 
 ### 3.3 UniformerV2_2
 ```
 UniformerV2_2_train
 |_ A2
-   |_ user_id_12670
-   |  |_ *.mp4
-   |_ user_id_13148
-   |  |_ *.mp4
-   |_ ...
-   |  |_ *.mp4
-   |_ user_id_96715
-      |_ *.mp4
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|  |  |_ *.mp4
 |_ data
-   |_ A1_clip_custom
-      |_ 0
-      |  |_ *.mp4
-      |_ 1
-      |  |_ *.mp4
-      |_ 2
-      |  |_ *.mp4
-      |_ 3
-         |_ *.mp4
+|  |_ A1_clip_custom
+|  |  |_ 0
+|  |  |  |_ *.mp4
+|  |  |_ 1
+|  |  |  |_ *.mp4
+|  |  |_ 2
+|  |  |  |_ *.mp4
+|  |  |_ 3
+|  |  |  |_ *.mp4
 ```
 
 ### 3.4 VideoMAE
 ```
 VideoMAE_train
 |_ A1
-   |_ user_id_13522
-   |  |_ *.mp4
-   |_ user_id_14786
-   |  |_ *.mp4
-   |_ ...
-   |  |_ *.mp4
-   |_ user_id_99882
-      |_ *.mp4
+|  |_ user_id_13522
+|  |  |_ *.mp4
+|  |_ user_id_14786
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_99882
+|  |  |_ *.mp4
 |_ data
-   |_ A1_clip
-      |_ 0
-      |  |_ *.mp4
-      |_ 1
-      |  |_ *.mp4
-      |_ ...
-      |  |_ *.mp4
-      |_ 15
-         |_ *.mp4
+|  |_ A1_clip
+|  |  |_ 0
+|  |  |  |_ *.mp4
+|  |  |_ 1
+|  |  |  |_ *.mp4
+|  |  |_ ...
+|  |  |  |_ *.mp4
+|  |  |_ 15
+|  |  |  |_ *.mp4
 |_ A2
-   |_ user_id_12670
-   |  |_ *.mp4
-   |_ user_id_13148
-   |  |_ *.mp4
-   |_ ...
-   |  |_ *.mp4
-   |_ user_id_96715
-      |_ *.mp4
+|  |_ user_id_12670
+|  |  |_ *.mp4
+|  |_ user_id_13148
+|  |  |_ *.mp4
+|  |_ ...
+|  |  |_ *.mp4
+|  |_ user_id_96715
+|  |  |_ *.mp4
 ```
 
 ## 4. Usage
@@ -119,12 +140,23 @@ bash infer.sh
 ```
 
 #### 4.1.2 UniformerV2_1
-To be released.
+To train UniformerV2_1, follow the code snippets bellow:
+```bash
+cp -r X3D_train/A2 UniformerV2_1_train/A2
+cd UniformerV2_1_train
+# Step 1: Train UniformerV2_1
+bash train.sh
+# Step 2: Rename and move checkpoints
+python move_ckpt.py
+# Step 3: Infer UniformerV2_2
+bash infer.sh
+```
 
 #### 4.1.3 UniformerV2_2
 To train UniformerV2_2, follow the code snippets bellow:
 ```bash
-cd UniformerV2_2
+cp -r X3D_train/A2 UniformerV2_2_train/A2
+cd UniformerV2_2_train
 # Step 1: Train UniformerV2_2
 bash train.sh
 # Step 2: Rename and move checkpoints
@@ -136,6 +168,7 @@ bash infer.sh
 #### 4.1.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
+cp -r X3D_train/A2 VideoMAE_train/A2
 cd VideoMAE_train
 # Step 1: Train VideoMAE
 bash scripts/cls/train_fold0.sh
@@ -155,6 +188,10 @@ To be released.
 ### 5. Ensemble model
 To ensemble four models, follow the code snippets bellow:
 ```bash
+cp -r UniformerV2_1_train/pickle_uniformerv2_full infer/pickle_uniformerv2_full
+cp -r UniformerV2_2_train/pickle_uniformerv2_4cls infer/pickle_uniformerv2_4cls
+cp -r X3D_train/pickle_x3d infer/pickle_x3d
+cp -r VideoMAE_train/pickle_videomae infer/pickle_videomae
 cd infer
 python run_submission_ensemble.py
 ```

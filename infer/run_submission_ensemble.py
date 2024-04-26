@@ -9,7 +9,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.set_option('mode.chained_assignment', None)
 
 _FILENAME_TO_ID = dict()
-data = pd.read_csv(os.path.join("data/B/", "video_ids.csv"))
+data = pd.read_csv(os.path.join("data/A2/", "video_ids.csv"))
 for idx, row_data in data.iterrows():
     _FILENAME_TO_ID[row_data[1].split(".")[0]] = row_data[0]
     _FILENAME_TO_ID[row_data[2].split(".")[0]] = row_data[0]
@@ -82,22 +82,22 @@ def multi_view_ensemble(avg_dash_seq, avg_right_seq, avg_rear_seq, avg_dash_seq_
 
 def main():
     clip_classification = []
-    pickle_dir_videomae = "pickles_videomae/A2"
+    pickle_dir_videomae = "pickle_videomae/A2"
     k_flod_dash_probs = load_k_fold_probs(pickle_dir_videomae, "dash")
     k_flod_right_probs = load_k_fold_probs(pickle_dir_videomae, "right")
     k_flod_rear_probs = load_k_fold_probs(pickle_dir_videomae, "rear")
 
-    pickle_dir_uniformer = "pickles_4cls/A2"
+    pickle_dir_uniformer = "pickle_uniformerv2_4cls/A2"
     k_flod_dash_probs_uniformer = load_k_fold_probs(pickle_dir_uniformer, "dash")
     k_flod_right_probs_uniformer = load_k_fold_probs(pickle_dir_uniformer, "right")
     k_flod_rear_probs_uniformer = load_k_fold_probs(pickle_dir_uniformer, "rear")
 
-    pickle_dir_uniformer_full = "pickles_uniformerv2/A2"
+    pickle_dir_uniformer_full = "pickle_uniformerv2_full/A2"
     k_flod_dash_probs_uniformer_full = load_k_fold_probs(pickle_dir_uniformer_full, "dash")
     k_flod_right_probs_uniformer_full = load_k_fold_probs(pickle_dir_uniformer_full, "right")
     k_flod_rear_probs_uniformer_full = load_k_fold_probs(pickle_dir_uniformer_full, "rear")
 
-    pickle_dir_x3d = "pickles_x3d/A2"
+    pickle_dir_x3d = "pickle_x3d/A2"
     k_flod_dash_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "dash")
     k_flod_right_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "right")
     k_flod_rear_probs_x3d = load_k_fold_probs(pickle_dir_x3d, "rear")
