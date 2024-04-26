@@ -1,6 +1,11 @@
-# This is the solution for track 3 of the AI City Challenge 2024
+# [CVPRW 2024] Multi-View Spatial-Temporal Learning for Understanding Unusual Behaviors in Untrimmed Naturalistic Driving Videos
 
-<div style="text-align:center;"><img src="dragon.jpg" alt="Image" width="224" height="224"></div>
+<p align="center"><img src="dragon.jpg" alt="Image" width="224" height="224"></p>
+
+This repository contains the source code for AI City Challenge 2024 Track 3 (Naturalistic Driving Action Recognition).
+
+- Team Name: SKKU-AutoLab 
+- Team ID: 05
 
 ## 1. Setup
 ### 1.1 Run from conda
@@ -212,7 +217,7 @@ If you find our work useful, please cite the following:
 ```
 
 ## 7. Contact
-If you have any questions, feel free to contact 'Huy-Hung Nguyen' ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi Dai Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
+If you have any questions, feel free to contact `Huy H. Nguyen` ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi D. Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
 
 ##  8. Acknowledgement
 Our framework is built using multiple open source, thanks for their great contributions.
