@@ -9,7 +9,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.set_option('mode.chained_assignment', None)
 
 _FILENAME_TO_ID = dict()
-data = pd.read_csv(os.path.join("data/A2/", "video_ids.csv"))
+data = pd.read_csv(os.path.join("data/B/", "video_ids.csv"))
 for idx, row_data in data.iterrows():
     _FILENAME_TO_ID[row_data[1].split(".")[0]] = row_data[0]
     _FILENAME_TO_ID[row_data[2].split(".")[0]] = row_data[0]
@@ -178,7 +178,9 @@ def main():
     loc_segments = util_loc.clip_to_segment(clip_classification)
     loc_segments = util_loc.reclassify_segment(loc_segments, all_model_results)
     loc_segments = util_loc.correct_with_prior_constraints(loc_segments)
-    with open("final_submission.txt", "w") as fp:
+    if not os.path.exists('../output_submission'):
+        os.makedirs('../output_submission')
+    with open("../output_submission/final_submission.txt", "w") as fp:
         for (vid, label, start, end) in loc_segments:
             fp.writelines("{} {} {} {}\n".format(int(vid), label, start, end))
 

@@ -1,5 +1,5 @@
 OUTPUT_DIR='pickles_videomae/A2'
-DATA_PATH='data/A2/'
+DATA_PATH='data/B/'
 
 MODEL_PATH='checkpoint_videomae/dash_0.pth'
 # batch_size can be adjusted according to number of GPUs

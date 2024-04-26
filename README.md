@@ -1,5 +1,7 @@
 # This is the solution for track 3 of the AI City Challenge 2024
 
+<div style="text-align:center;"><img src="dragon.jpg" alt="Image" width="224" height="224"></div>
+
 ## 1. Setup
 ### 1.1 Run from conda
 conda env create -f environment.yml
