@@ -192,6 +192,7 @@ cp -r UniformerV2_1_train/pickle_uniformerv2_full infer/pickle_uniformerv2_full
 cp -r UniformerV2_2_train/pickle_uniformerv2_4cls infer/pickle_uniformerv2_4cls
 cp -r X3D_train/pickle_x3d infer/pickle_x3d
 cp -r VideoMAE_train/pickle_videomae infer/pickle_videomae
+cp -r X3D_train/A2 infer/A2
 cd infer
 python run_submission_ensemble.py
 ```
