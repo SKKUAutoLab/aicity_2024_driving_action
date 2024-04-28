@@ -47,6 +47,8 @@ To get pretrained backbone weights for UniformerV2_1 and UniformerV2_2, please d
 
 To get pretrained weights for VideoMAE, please download it from this [link](https://drive.google.com/file/d/1Fr7e_Q49o-Ug5VlasrZfp8NUVPw-AdF8/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
+To get docker file to make an inference on a custom dataset, please download it from this [link](https://drive.google.com/file/d/10_wLt8mK3QoCmQjnkOOvEiv7lPbjUD_w/view?usp=sharing).
+
 ## 3. Weight preparation (only use to infer from source)
 To get X3D weights, please download them from this [link](https://drive.google.com/file/d/1TpcfCkKSMhPjyHqbsopQjl7I9fYMvFDE/view?usp=sharing). After downloading, extract the file and put it to the folder X3D_train.
 
@@ -162,11 +164,12 @@ VideoMAE_train
 |  |  |_ 15
 |  |  |  |_ *.mp4
 |  |  |_ *.csv
+|_ pretrained_models
+|  |_ vit_l_hybrid_pt_800e_k700_ft.pth
 ```
 
 ## 4. Usage
-### 4.1 For conda
-#### 4.1.1 X3D
+### 4.1 X3D
 To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
@@ -174,9 +177,10 @@ cd X3D_train
 bash train.sh
 # Step 2: Rename and move checkpoints
 python move_ckpt.py
+cd ..
 ```
 
-#### 4.1.2 UniformerV2_1
+#### 4.2 UniformerV2_1
 To train UniformerV2_1, follow the code snippets bellow:
 ```bash
 cd UniformerV2_1_train
@@ -184,9 +188,10 @@ cd UniformerV2_1_train
 bash train.sh
 # Step 2: Rename and move checkpoints
 python move_ckpt.py
+cd ..
 ```
 
-#### 4.1.3 UniformerV2_2
+#### 4.3 UniformerV2_2
 To train UniformerV2_2, follow the code snippets bellow:
 ```bash
 cd UniformerV2_2_train
@@ -194,9 +199,10 @@ cd UniformerV2_2_train
 bash train.sh
 # Step 2: Rename and move checkpoints
 python move_ckpt.py
+cd ..
 ```
 
-#### 4.1.4 VideoMAE
+#### 4.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
 cd VideoMAE_train
@@ -210,21 +216,13 @@ bash scripts/cls/train_fold4.sh
 python move_ckpt.py
 # Step 3: Infer VideoMAE
 bash scripts/cls/inference_cls.sh
+cd ..
 ```
 
-### 4.2 For docker
-To be released.
-
 ### 5. Ensemble model
-To ensemble four models, follow the code snippets bellow:
+To ensemble four models, run the following script:
 ```bash
-cp -r UniformerV2_1_train/pickle_uniformerv2_full infer/pickle_uniformerv2_full
-cp -r UniformerV2_2_train/pickle_uniformerv2_4cls infer/pickle_uniformerv2_4cls
-cp -r X3D_train/pickle_x3d infer/pickle_x3d
-cp -r VideoMAE_train/pickle_videomae infer/pickle_videomae
-cp -r X3D_train/A2 infer/A2
-cd infer
-python run_submission_ensemble.py
+bash run_infer_all.sh
 ```
 
 ## 6. Citation
