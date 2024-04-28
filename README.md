@@ -12,7 +12,7 @@ conda env create --name track3 --file=environment.yml
 
 conda activate track3
 
-pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 
 #### Using requirements.txt
 conda create --name track3 python=3.10.13
@@ -39,11 +39,11 @@ Ex: docker run --ipc=host --gpus all -v /home/vsw/Downloads/AIC24-Track03/:/usr/
 							         -it 96f8bfc76877
 
 ## 2. Dataset preparation
-To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data, and UniformerV2_1_train/data.
+To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data/A1_clip (only put sub folders in the A1_clip folder), and UniformerV2_1_train/data.
 
 To get custom cut videos for training UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1HFxKcY0RFh1UJBH00PAHOqrlhI6w8UX9/view?usp=sharing). After downloading, extract the file and put it to folder UniformerV2_2_train/data.
 
-To get pretrained backbone weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1p3VtY6bAEOlVBP8C4ev4kZSVDXG-I0ng/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1 and UniformerV2_2. 
+To get pretrained backbone weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/10mCzuJZCUSqrkVpv8An8nzCJUfMj8skl/view?usp=sharing) and this [link](https://drive.google.com/file/d/1uSCu22RMYIh7x7phB1HcGNQ9HsXSq-Fx/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1 and UniformerV2_2. 
 
 To get pretrained weights for VideoMAE, please download it from this [link](https://drive.google.com/file/d/1Fr7e_Q49o-Ug5VlasrZfp8NUVPw-AdF8/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
