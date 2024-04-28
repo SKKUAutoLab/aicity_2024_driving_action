@@ -8,24 +8,22 @@ This repository contains the source code for AI City Challenge 2024 Track 3 (Nat
 ## 1. Setup
 ### 1.1 Run from conda (for both training and inference)
 #### Using environment.yml
+```
 conda env create --name track3 --file=environment.yml
-
 conda activate track3
-
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
-
+```
 #### Using requirements.txt
+```
 conda create --name track3 python=3.10.13
-
 conda activate track3
-
 pip install -r requirements.txt
-
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
-
 pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
-
+```
 ### 1.2 Run from Docker (only for inference)
+First, download all weights and put to the corresponding folders as Section 3. Then, run the following scripts:
+```
 sudo docker load < docker_aic24_track3_final.tar
 
 docker run --ipc=host --gpus all -v <LOCAL_SOURCE_CODE>:/usr/src/aic24-track_3/ \
@@ -37,7 +35,7 @@ Ex: docker run --ipc=host --gpus all -v /home/vsw/Downloads/AIC24-Track03/:/usr/
 								     -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
 									 -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
 							         -it 96f8bfc76877
-
+```
 ## 2. Dataset preparation
 To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data/A1_clip (only put sub folders in the A1_clip folder), and UniformerV2_1_train/data.
 
@@ -49,7 +47,7 @@ To get pretrained weights for VideoMAE, please download it from this [link](http
 
 To get docker file to make an inference on a custom dataset, please download it from this [link](https://drive.google.com/file/d/10_wLt8mK3QoCmQjnkOOvEiv7lPbjUD_w/view?usp=sharing).
 
-## 3. Weight preparation (only use to infer from source)
+## 3. Weight preparation
 To get X3D weights, please download them from this [link](https://drive.google.com/file/d/1TpcfCkKSMhPjyHqbsopQjl7I9fYMvFDE/view?usp=sharing). After downloading, extract the file and put it to the folder X3D_train.
 
 To get UniformerV2_1 weights, please download them from this [link](https://drive.google.com/file/d/1eONE4evmZ2smmjgp2q-N4UcWWiib3pDd/view?usp=sharing). After downloading, extract the file and put it to the folder UniformerV2_1_train.
