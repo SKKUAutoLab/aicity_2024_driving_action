@@ -1,7 +1,5 @@
 # [CVPRW 2024] Multi-View Spatial-Temporal Learning for Understanding Unusual Behaviors in Untrimmed Naturalistic Driving Videos
 
-<p align="center"><img src="dragon.jpg" alt="Image" width="224" height="224"></p>
-
 This repository contains the source code for AI City Challenge 2024 Track 3 (Naturalistic Driving Action Recognition).
 
 - Team Name: SKKU-AutoLab 
@@ -9,21 +7,54 @@ This repository contains the source code for AI City Challenge 2024 Track 3 (Nat
 
 ## 1. Setup
 ### 1.1 Run from conda
-conda env create -f environment.yml
+#### Using environment.yml
+conda env create --name track3 --file=environment.yml
 
-conda activate anomaly
+conda activate track3
 
-### 1.2 Run from Docker
-To be released.
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+
+#### Using requirements.txt
+conda create --name track3 python=3.10.3
+
+conda activate track3
+
+pip install -r requirements.txt
+
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+
+pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
+
+### 1.2 Run from Docker (only for inference)
+sudo docker load < docker_aic24_track3_final.tar
+
+docker run --ipc=host --gpus all -v <LOCAL_SOURCE_CODE>:/usr/src/aic24-track_3/ \
+                                 -v <LOCAL_INPUT_DATA>:/usr/src/aic24-track_3/B/ \
+							     -v <LOCAL_OUTPUT_FOLDER>:/usr/src/aic24-track_3/output_submission/ \
+					             -it <IMAGE_ID>
+
+Ex: docker run --ipc=host --gpus all -v /home/vsw/Downloads/AIC24-Track03/:/usr/src/aic24-track_3/ \
+								     -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
+									 -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
+							         -it 96f8bfc76877
 
 ## 2. Dataset preparation
 To get cut videos for training, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data, and UniformerV2_1_train/data.
 
 To get custom cut videos for training UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1HFxKcY0RFh1UJBH00PAHOqrlhI6w8UX9/view?usp=sharing). After downloading, extract the file and put it to folder UniformerV2_2_train/data.
 
+## 3. Weight preparation (only use to infer from source)
+To get X3D weights, please download them from this [link](https://drive.google.com/file/d/1TpcfCkKSMhPjyHqbsopQjl7I9fYMvFDE/view?usp=sharing). After downloading, extract the file and put it to the folder X3D_train.
+
+To get UniformerV2_1 weights, please download them from this [link](https://drive.google.com/file/d/1eONE4evmZ2smmjgp2q-N4UcWWiib3pDd/view?usp=sharing). After downloading, extract the file and put it to the folder UniformerV2_1_train.
+
+To get UniformerV2_2 weights, please download them from this [link](https://drive.google.com/file/d/1rK7lhVGpyRlqDLZFz5_GWrWUyCdZQzJg/view?usp=sharing). After downloading, extract the file and put it to the folder UniformerV2_2_train.
+
+To get VideoMAE weights, please download them from this [link](https://drive.google.com/file/d/14KZPd5kHw0kNzQZi0DFF-8AfXeE3DSZa/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
+
 ## 3. Dataset structure
 ### 3.1 X3D
-The AI City dataset is organized with the following structure:
+For X3D model, the dataset is organized with the following structure:
 ```
 X3D_train
 |_ A2
@@ -45,9 +76,16 @@ X3D_train
 |  |  |  |_ *.mp4
 |  |  |_ 15
 |  |  |  |_ *.mp4
+|  |_ *.csv
+|_ pickle_x3d
+|  |_ A2
+|  |  |_ *.pkl
+|_ checkpoint_x3d
+|  |_ *.pyth
 ```
 
 ### 3.2 UniformerV2_1
+For UniformerV2_1 model, the dataset is organized with the following structure:
 ```
 UniformerV2_2_train
 |_ A2
@@ -69,9 +107,14 @@ UniformerV2_2_train
 |  |  |  |_ *.mp4
 |  |  |_ 15
 |  |  |  |_ *.mp4
+|_ pickle_uniformerv2_full
+|  |_ *.pkl
+|_ checkpoint_uniformerv2_full
+|  |_ *.pyth
 ```
 
 ### 3.3 UniformerV2_2
+For UniformerV2_2 model, the dataset is organized with the following structure:
 ```
 UniformerV2_2_train
 |_ A2
@@ -93,21 +136,26 @@ UniformerV2_2_train
 |  |  |  |_ *.mp4
 |  |  |_ 3
 |  |  |  |_ *.mp4
+|_ pickle_uniformerv2_4lcs
+|  |_ *.pkl
+|_ checkpoint_uniformerv2_4cls
+|  |_ *.pyth
 ```
 
 ### 3.4 VideoMAE
+For VideoMAE model, the dataset is organized with the following structure:
 ```
 VideoMAE_train
-|_ A1
-|  |_ user_id_13522
-|  |  |_ *.mp4
-|  |_ user_id_14786
-|  |  |_ *.mp4
-|  |_ ...
-|  |  |_ *.mp4
-|  |_ user_id_99882
-|  |  |_ *.mp4
 |_ data
+|  |_ A1
+|  |  |_ user_id_13522
+|  |  |  |_ *.mp4
+|  |  |_ user_id_14786
+|  |  |  |_ *.mp4
+|  |  |_ ...
+|  |  |  |_ *.mp4
+|  |  |_ user_id_99882
+|  |  |  |_ *.mp4
 |  |_ A1_clip
 |  |  |_ 0
 |  |  |  |_ *.mp4
@@ -117,7 +165,8 @@ VideoMAE_train
 |  |  |  |_ *.mp4
 |  |  |_ 15
 |  |  |  |_ *.mp4
-|_ A2
+|  |  |_ *.csv
+|  |_ A2
 |  |_ user_id_12670
 |  |  |_ *.mp4
 |  |_ user_id_13148
