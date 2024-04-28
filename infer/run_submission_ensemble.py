@@ -9,7 +9,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.set_option('mode.chained_assignment', None)
 
 _FILENAME_TO_ID = dict()
-data = pd.read_csv(os.path.join("data/B/", "video_ids.csv"))
+data = pd.read_csv(os.path.join("../B/", "video_ids.csv"))
 for idx, row_data in data.iterrows():
     _FILENAME_TO_ID[row_data[1].split(".")[0]] = row_data[0]
     _FILENAME_TO_ID[row_data[2].split(".")[0]] = row_data[0]

@@ -168,10 +168,10 @@ if __name__ == '__main__':
     checkpoint_right_list = natsorted(checkpoint_right_list)
     for i in range(len(checkpoint_dashboard_list)):
         print('Load checkpoint:', checkpoint_dashboard_list[i])
-        main(cfg, 'B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'dash', i, checkpoint_dashboard_list[i])
+        main(cfg, '../B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'dash', i, checkpoint_dashboard_list[i])
     for i in range(len(checkpoint_rearview_list)):
         print('Load checkpoint:', checkpoint_rearview_list[i])
-        main(cfg, 'B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'rear', i, checkpoint_rearview_list[i])
+        main(cfg, '../B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'rear', i, checkpoint_rearview_list[i])
     for i in range(len(checkpoint_right_list)):
         print('Load checkpoint:', checkpoint_right_list[i])
-        main(cfg, 'B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'right', i, checkpoint_right_list[i])
+        main(cfg, '../B/', 'video_ids.csv', cfg.DATA.SAMPLING_RATE, 30, True, 'right', i, checkpoint_right_list[i])
