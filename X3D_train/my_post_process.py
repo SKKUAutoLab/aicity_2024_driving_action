@@ -140,9 +140,9 @@ def main(cfg, data_path, csv_file, sampling_rate, clip_stride, crop, view, fold,
     # save inference results to pickle for post-processing
     for file_name in unique_names:
         vmae_16x4[file_name] = np.asarray(results.get_group(str(file_name))["prob"])
-    output_dir = 'pickles_x3d/A2'
+    output_dir = 'pickle_x3d/A2'
     if not os.path.exists(output_dir):
-        os.makedirs('pickles_x3d/A2')
+        os.makedirs('pickle_x3d/A2')
     with open(os.path.join(output_dir, "A2_{}_vmae_16x4_crop_fold{}.pkl".format(view, fold)), "wb") as f:
         pickle.dump(vmae_16x4, f)
 

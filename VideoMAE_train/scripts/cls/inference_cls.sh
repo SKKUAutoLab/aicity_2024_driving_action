@@ -1,4 +1,4 @@
-OUTPUT_DIR='pickles_videomae/A2'
+OUTPUT_DIR='pickle_videomae/A2'
 DATA_PATH='../B/'
 
 MODEL_PATH='checkpoint_videomae/dash_0.pth'
