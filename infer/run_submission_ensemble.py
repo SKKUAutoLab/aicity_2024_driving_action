@@ -177,7 +177,7 @@ def main():
     clip_classification = pd.DataFrame(clip_classification, columns=["video_id", "label", "start", "end"])
     loc_segments = util_loc.clip_to_segment(clip_classification)
     loc_segments = util_loc.reclassify_segment(loc_segments, all_model_results)
-    loc_segments = util_loc.correct_with_prior_constraints(loc_segments)
+    loc_segments = util_loc.correct_with_prior_constraints(loc_segments, num_vids=len(k_flod_right_probs[0].keys()))
     if not os.path.exists('../output_submission'):
         os.makedirs('../output_submission')
     with open("../output_submission/final_submission.txt", "w") as fp:

@@ -198,10 +198,10 @@ def reclassify_segment(loc_segments, all_model_results):
     loc_segments = loc_segments[loc_segments["end"] != 0]
     return loc_segments
 
-def correct_with_prior_constraints(loc_segments):
+def correct_with_prior_constraints(loc_segments, num_vids):
     prediction = loc_segments.groupby("video_id")
     submission = []
-    for vid in range(1, 31):
+    for vid in range(1, int(num_vids) + 1):
         prediction_by_vid = prediction.get_group(vid).reset_index(drop=True)
         unique_labels = np.unique(prediction_by_vid.label.values) # [1...15]
         miss_labels = list(set([l for l in range(1, 16)]).difference(set(unique_labels))) # [12, 13]
