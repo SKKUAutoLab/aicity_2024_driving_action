@@ -22,7 +22,7 @@ pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url http
 pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
 ```
 ### 1.2 Run from Docker (only for inference)
-First, download all weights and put to the corresponding folders as Section 3. Then, run the following scripts:
+First, download all weights and pretrained weights as Section 2 and Section 3. Then, put them to the corresponding folders. Finally, run the following scripts:
 ```
 sudo docker load < docker_aic24_track3_final.tar
 
@@ -41,7 +41,7 @@ To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download
 
 To get custom cut videos for training UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1HFxKcY0RFh1UJBH00PAHOqrlhI6w8UX9/view?usp=sharing). After downloading, extract the file and put it to folder UniformerV2_2_train/data.
 
-To get pretrained backbone weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/10mCzuJZCUSqrkVpv8An8nzCJUfMj8skl/view?usp=sharing) and this [link](https://drive.google.com/file/d/1uSCu22RMYIh7x7phB1HcGNQ9HsXSq-Fx/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1 and UniformerV2_2. 
+To get pretrained weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/10mCzuJZCUSqrkVpv8An8nzCJUfMj8skl/view?usp=sharing) and this [link](https://drive.google.com/file/d/1uSCu22RMYIh7x7phB1HcGNQ9HsXSq-Fx/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1 and UniformerV2_2. 
 
 To get pretrained weights for VideoMAE, please download it from this [link](https://drive.google.com/file/d/1Fr7e_Q49o-Ug5VlasrZfp8NUVPw-AdF8/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
