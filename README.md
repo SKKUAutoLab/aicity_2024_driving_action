@@ -22,7 +22,6 @@ pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url http
 pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
 ```
 ### 1.2 Run from Docker (only for inference)
-First, download all weights and pretrained weights as Section 2 and Section 3. Then, put them to the corresponding folders. Finally, run the following scripts:
 ```
 sudo docker load < docker_aic24_track3_final.tar
 
