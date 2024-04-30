@@ -26,15 +26,13 @@ First, download all weights and pretrained weights as Section 2 and Section 3. T
 ```
 sudo docker load < docker_aic24_track3_final.tar
 
-docker run --ipc=host --gpus all -v <LOCAL_SOURCE_CODE>:/usr/src/aic24-track_3/ \
-                                 -v <LOCAL_INPUT_DATA>:/usr/src/aic24-track_3/B/ \
-							     -v <LOCAL_OUTPUT_FOLDER>:/usr/src/aic24-track_3/output_submission/ \
-					             -it <IMAGE_ID>
+sudo docker run --ipc=host --gpus all -v <LOCAL_INPUT_DATA>:/usr/src/aic24-track_3/B/ \
+							          -v <LOCAL_OUTPUT_FOLDER>:/usr/src/aic24-track_3/output_submission/ \
+					                  -it <IMAGE_ID>
 
-Ex: docker run --ipc=host --gpus all -v /home/vsw/Downloads/AIC24-Track03/:/usr/src/aic24-track_3/ \
-								     -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
-									 -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
-							         -it 96f8bfc76877
+Ex: sudo docker run --ipc=host --gpus all -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
+									      -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
+							              -it 96f8bfc76877
 ```
 ## 2. Dataset preparation
 To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data/A1_clip (only put sub folders in the A1_clip folder), and UniformerV2_1_train/data.
