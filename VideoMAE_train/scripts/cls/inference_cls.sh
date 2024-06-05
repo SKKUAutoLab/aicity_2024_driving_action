@@ -143,7 +143,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 4 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rightside_0.pth'
+MODEL_PATH='checkpoint_videomae/right_0.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -171,7 +171,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 0 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rightside_1.pth'
+MODEL_PATH='checkpoint_videomae/right_1.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -199,7 +199,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 1 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rightside_2.pth'
+MODEL_PATH='checkpoint_videomae/right_2.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -227,7 +227,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 2 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rightside_3.pth'
+MODEL_PATH='checkpoint_videomae/right_3.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -255,7 +255,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 3 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rightside_4.pth'
+MODEL_PATH='checkpoint_videomae/right_4.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -283,7 +283,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --fold 4 \
     --crop \
 
-MODEL_PATH='checkpoint_videomae/rearview_0.pth'
+MODEL_PATH='checkpoint_videomae/rear_0.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -312,7 +312,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --crop \
 
 
-MODEL_PATH='checkpoint_videomae/rearview_1.pth'
+MODEL_PATH='checkpoint_videomae/rear_1.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -341,7 +341,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
     --crop \
 
 
-MODEL_PATH='checkpoint_videomae/rearview_2.pth'
+MODEL_PATH='checkpoint_videomae/rear_2.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -371,7 +371,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
 
 
 
-MODEL_PATH='checkpoint_videomae/rearview_3.pth'
+MODEL_PATH='checkpoint_videomae/rear_3.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
@@ -401,7 +401,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \
 
 
 
-MODEL_PATH='checkpoint_videomae/rearview_4.pth'
+MODEL_PATH='checkpoint_videomae/rear_4.pth'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 64 GPUs (8 nodes x 8 GPUs) 
 CUDA_VISIBLE_DEVICES=0 python evaluate_loc.py \

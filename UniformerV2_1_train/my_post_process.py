@@ -157,9 +157,9 @@ if __name__ == '__main__':
     checkpoint_right_list = []
     path_saved_ckpt = natsorted(glob.glob('checkpoint_uniformerv2_full/*.pyth'))
     for i in range(len(path_saved_ckpt)):
-        if path_saved_ckpt[i].split('/')[-1].split('_')[0] == 'dashboard':
+        if path_saved_ckpt[i].split('/')[-1].split('_')[0] == 'dash':
             checkpoint_dashboard_list.append(path_saved_ckpt[i])
-        elif path_saved_ckpt[i].split('/')[-1].split('_')[0] == 'rearview':
+        elif path_saved_ckpt[i].split('/')[-1].split('_')[0] == 'rear':
             checkpoint_rearview_list.append(path_saved_ckpt[i])
         else:
             checkpoint_right_list.append(path_saved_ckpt[i])

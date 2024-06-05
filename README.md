@@ -209,8 +209,6 @@ bash scripts/cls/train_fold3.sh
 bash scripts/cls/train_fold4.sh
 # Step 2: Rename and move checkpoints
 python move_ckpt.py
-# Step 3: Infer VideoMAE
-bash scripts/cls/inference_cls.sh
 cd ..
 ```
 
