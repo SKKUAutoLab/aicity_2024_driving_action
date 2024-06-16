@@ -1,23 +1,23 @@
-python3 generate_test_ids.py --test_path B/
+# python3 generate_test_ids.py --test_path B/
 
-cd X3D_train
-export PYTHONPATH=$PWD/:$PYTHONPATH
-python3 my_post_process.py --cfg configs/X3D_L.yaml NUM_GPUS 1 TRAIN.ENABLE False
-cd ..
+# cd X3D_train
+# export PYTHONPATH=$PWD/:$PYTHONPATH
+# python3 my_post_process.py --cfg configs/X3D_L.yaml NUM_GPUS 1 TRAIN.ENABLE False
+# cd ..
 
-cd UniformerV2_1_train
-export PYTHONPATH=$PWD/:$PYTHONPATH
-python3 my_post_process.py --cfg exp/k710/k710_l14_f8x336/config.yaml NUM_GPUS 1 TRAIN.ENABLE False
-cd ..
+# cd UniformerV2_1_train
+# export PYTHONPATH=$PWD/:$PYTHONPATH
+# python3 my_post_process.py --cfg exp/k710/k710_l14_f8x336/config.yaml NUM_GPUS 1 TRAIN.ENABLE False
+# cd ..
 
-cd UniformerV2_2_train
-export PYTHONPATH=$PWD/:$PYTHONPATH
-python3 my_post_process.py --cfg my_config.yaml NUM_GPUS 1 TRAIN.ENABLE False
-cd ..
+# cd UniformerV2_2_train
+# export PYTHONPATH=$PWD/:$PYTHONPATH
+# python3 my_post_process.py --cfg my_config.yaml NUM_GPUS 1 TRAIN.ENABLE False
+# cd ..
 
-cd VideoMAE_train
-bash scripts/cls/inference_cls.sh
-cd ..
+# cd VideoMAE_train
+# bash scripts/cls/inference_cls.sh
+# cd ..
 
 rm -rf infer/pickle_uniformerv2_full
 rm -rf infer/pickle_uniformerv2_4cls
