@@ -215,6 +215,10 @@ cd ..
 ### 5. Ensemble model
 To ensemble four models, run the following script:
 ```bash
+bash run_infer_x3d.sh
+bash run_infer_uniformerv2_1.sh
+bash run_infer_uniformerv2_2.sh
+bash run_infer_videomae.sh
 bash run_infer_all.sh
 ```
 
@@ -222,10 +226,10 @@ bash run_infer_all.sh
 If you find our work useful, please cite the following:
 ```
 @inproceedings{nguyen2024multi,
-  title={Multi-View Spatial-Temporal Learning for Understanding Unusual Behaviors in Untrimmed Naturalistic Driving Videos},
-  author={Huy-Hung Nguyen, Chi Dai Tran, Long Hoang Pham, Duong Nguyen-Ngoc Tran, Tai Huu-Phuong Tran, Duong Khac Vu, Quoc Pham-Nam Ho, Ngoc Doan-Minh Huynh, Huyng-Min Jeon, Hyung-Joon Jeon, Jae Wook Jeon},
+  title={Multi-view spatial-temporal learning for understanding unusual behaviors in untrimmed naturalistic driving videos},
+  author={Nguyen, Huy-Hung and Tran, Chi Dai and Pham, Long Hoang and Tran, Duong Nguyen-Ngoc and Tran, Tai Huu-Phuong and Vu, Duong Khac and Ho, Quoc Pham-Nam and Huynh, Ngoc Doan-Minh and Jeon, Hyung-Min and Jeon, Hyung-Joon and others},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={x--x},
+  pages={7144--7152},
   year={2024}
 }
 ```
