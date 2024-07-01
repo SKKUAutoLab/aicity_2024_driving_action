@@ -2,8 +2,8 @@
 
 This repository contains the source code for AI City Challenge 2024 Track 3 (Naturalistic Driving Action Recognition).
 
-- Team Name: SKKU-AutoLab 
-- Team ID: 05
+- Team Name: SKKU-AutoLab. 
+- Team ID: 05.
 
 ## 1. Setup
 ### 1.1 Run from conda (for both training and inference)
@@ -24,14 +24,13 @@ pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
 ### 1.2 Run from Docker (only for inference)
 ```
 sudo docker load < docker_aic24_track3_final.tar
-
 sudo docker run --ipc=host --gpus all -v <LOCAL_INPUT_DATA>:/usr/src/aic24-track_3/B/ \
-							          -v <LOCAL_OUTPUT_FOLDER>:/usr/src/aic24-track_3/output_submission/ \
-					                  -it <IMAGE_ID>
-
-Ex: sudo docker run --ipc=host --gpus all -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
-									      -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
-							              -it 96f8bfc76877
+				      -v <LOCAL_OUTPUT_FOLDER>:/usr/src/aic24-track_3/output_submission/ \
+				      -it <IMAGE_ID>
+bash run_infer_all.sh
+Example: sudo docker run --ipc=host --gpus all -v /home/vsw/Downloads/B/:/usr/src/aic24-track_3/B/ \
+					       -v /home/vsw/Downloads/output_submission/:/usr/src/aic24-track_3/output_submission/ \
+					       -it 96f8bfc76877
 ```
 ## 2. Dataset preparation
 To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download it from this [link](https://drive.google.com/file/d/13HEJptRQeu_0yzmX8NsRr4qdqgAaY4jZ/view?usp=sharing). After downloading, extract the file and put it to three folders X3D_train/data, VideoMAE_train/data/A1_clip (only put sub folders in the A1_clip folder), and UniformerV2_1_train/data.
@@ -219,6 +218,7 @@ bash run_infer_x3d.sh
 bash run_infer_uniformerv2_1.sh
 bash run_infer_uniformerv2_2.sh
 bash run_infer_videomae.sh
+# copy all checkpoints to the infer folder and create the submission file
 bash run_infer_all.sh
 ```
 
@@ -235,7 +235,7 @@ If you find our work useful, please cite the following:
 ```
 
 ## 7. Contact
-If you have any questions, feel free to contact `Huy H. Nguyen` ([huyhung411991@gmail.com](huyhung411991@gmail.com)), or `Chi D. Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
+If you have any questions, feel free to contact `Huy H. Nguyen` ([huyhung411991@gmail.com](huyhung411991@gmail.com)), `Chi D. Tran` ([ctran743@gmail.com](ctran743@gmail.com)) or `Automation Lab` ([automation.skku@gmail.com](automation.skku@gmail.com)).
 
 ##  8. Acknowledgement
 Our framework is built using multiple open source, thanks for their great contributions.
