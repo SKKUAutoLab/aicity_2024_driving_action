@@ -181,3 +181,4 @@ yarl==1.9.4
 zipp==3.17.0
 # git+https://github.com/facebookresearch/detectron2.git@v0.6
 git+https://github.com/facebookresearch/fairscale
+matplotlib==3.7.0

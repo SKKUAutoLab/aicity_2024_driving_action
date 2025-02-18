@@ -218,8 +218,7 @@ bash scripts/run_infer_x3d.sh
 bash scripts/run_infer_uniformerv2_1.sh
 bash scripts/run_infer_uniformerv2_2.sh
 bash scripts/run_infer_videomae.sh
-# copy all checkpoints to the infer folder and create the submission file
-bash scripts/run_infer_all.sh
+bash scripts/run_infer_all.sh # copy all checkpoints to the infer folder and create the submission file
 ```
 
 ## 6. Citation
