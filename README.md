@@ -37,7 +37,7 @@ To get cut videos for training X3D, UniformerV1_1, and VideoMAE, please download
 
 To get custom cut videos for training UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/1HFxKcY0RFh1UJBH00PAHOqrlhI6w8UX9/view?usp=sharing). After downloading, extract the file and put it to folder UniformerV2_2_train/data.
 
-To get pretrained weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/10mCzuJZCUSqrkVpv8An8nzCJUfMj8skl/view?usp=sharing) and this [link](https://drive.google.com/file/d/1uSCu22RMYIh7x7phB1HcGNQ9HsXSq-Fx/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1 and UniformerV2_2. 
+To get pretrained weights for UniformerV2_1 and UniformerV2_2, please download it from this [link](https://drive.google.com/file/d/10mCzuJZCUSqrkVpv8An8nzCJUfMj8skl/view?usp=sharing) and this [link](https://drive.google.com/file/d/1uSCu22RMYIh7x7phB1HcGNQ9HsXSq-Fx/view?usp=sharing). After downloading, extract the file and put it to two folders UniformerV2_1_train and UniformerV2_2_train. 
 
 To get pretrained weights for VideoMAE, please download it from this [link](https://drive.google.com/file/d/1Fr7e_Q49o-Ug5VlasrZfp8NUVPw-AdF8/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
@@ -212,14 +212,14 @@ cd ..
 ```
 
 ### 5. Ensemble model
-To ensemble four models, run the following script:
+To ensemble four models, run the following scripts:
 ```bash
-bash run_infer_x3d.sh
-bash run_infer_uniformerv2_1.sh
-bash run_infer_uniformerv2_2.sh
-bash run_infer_videomae.sh
+bash scripts/run_infer_x3d.sh
+bash scripts/run_infer_uniformerv2_1.sh
+bash scripts/run_infer_uniformerv2_2.sh
+bash scripts/run_infer_videomae.sh
 # copy all checkpoints to the infer folder and create the submission file
-bash run_infer_all.sh
+bash scripts/run_infer_all.sh
 ```
 
 ## 6. Citation
