@@ -22,7 +22,7 @@ def create_ids(args):
             for j in range(len(list_file)):
                 if 'Dashboard' in list_file[j]:
                     list_dashboard.append(list_file[j])
-                elif 'Rear_view' in list_file[j]:
+                elif 'Rear_view' in list_file[j] or 'Rearview' in list_file[j]:
                     list_rearview.append(list_file[j])
                 else:
                     list_rightside.append(list_file[j])

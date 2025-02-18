@@ -3,12 +3,6 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-labels = ["Normal forward driving", "Drinking", "Phone call (Right)", "Phone call (Left)", 
-    	  "Eating", "Text (Right)", "Text (Left)", "Reaching behind", "Adjust control panel", 
-    	  "Pick up from floor (Driver)", "Pick up from floor (Passenger)", 
-    	  "Talk to passenger (Right)", "Talk to passenger (Backseat)", "Yawning", 
-    	  "Hand on head", "Singing or dancing with music"]
-
 with open("A2_rear_vmae_16x4_crop_fold0.pkl", "rb") as f:
     prob_data = pickle.load(f)
 video_key = 'Rearview_user_id_12670_NoAudio_7'  
