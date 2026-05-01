@@ -6,14 +6,14 @@ This repository contains the source code for AI City Challenge 2024 Track 3 (Nat
 - Team ID: 05.
 
 ## 1. Setup
-### 1.1 Run from conda (for both training and inference)
-#### 1.1.1 Using environment.yml
+### 1.1. Run from conda (for both training and inference)
+#### 1.1.1. Using environment.yml
 ```
 conda env create --name track3 --file=environment.yml
 conda activate track3
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 ```
-#### 1.1.2 Using requirements.txt
+#### 1.1.2. Using requirements.txt
 ```
 conda create --name track3 python=3.10.13
 conda activate track3
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 pip install detectron2-0.6-cp310-cp310-linux_x86_64.whl
 ```
-### 1.2 Run from Docker (only for inference)
+### 1.2. Run from Docker (only for inference)
 ```
 sudo docker load < docker_aic24_track3_final.tar
 sudo docker run --ipc=host --gpus all -v <LOCAL_INPUT_DATA>:/usr/src/aic24-track_3/B/ \
@@ -53,7 +53,7 @@ To get UniformerV2_2 weights, please download them from this [link](https://driv
 To get VideoMAE weights, please download them from this [link](https://drive.google.com/file/d/14KZPd5kHw0kNzQZi0DFF-8AfXeE3DSZa/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
 ## 4. Dataset structure
-### 4.1 X3D
+### 4.1. X3D
 For X3D model, the dataset is organized with the following structure:
 ```
 X3D_train
@@ -75,7 +75,7 @@ X3D_train
 |  |_ *.pyth
 ```
 
-### 4.2 UniformerV2_1
+### 4.2. UniformerV2_1
 For UniformerV2_1 model, the dataset is organized with the following structure:
 ```
 UniformerV2_1_train
@@ -109,7 +109,7 @@ UniformerV2_1_train
 |  |  |_ vit_l14_336.pth
 ```
 
-### 4.3 UniformerV2_2
+### 4.3. UniformerV2_2
 For UniformerV2_2 model, the dataset is organized with the following structure:
 ```
 UniformerV2_2_train
@@ -143,7 +143,7 @@ UniformerV2_2_train
 |  |  |_ vit_l14_336.pth
 ```
 
-### 4.4 VideoMAE
+### 4.4. VideoMAE
 For VideoMAE model, the dataset is organized with the following structure:
 ```
 VideoMAE_train
@@ -163,7 +163,7 @@ VideoMAE_train
 ```
 
 ## 5. Usage
-### 5.1 X3D
+### 5.1. X3D
 To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
@@ -174,7 +174,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 5.2 UniformerV2_1
+#### 5.2. UniformerV2_1
 To train UniformerV2_1, follow the code snippets bellow:
 ```bash
 cd UniformerV2_1_train
@@ -185,7 +185,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 5.3 UniformerV2_2
+#### 5.3. UniformerV2_2
 To train UniformerV2_2, follow the code snippets bellow:
 ```bash
 cd UniformerV2_2_train
@@ -196,7 +196,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 5.4 VideoMAE
+#### 5.4. VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
 cd VideoMAE_train
