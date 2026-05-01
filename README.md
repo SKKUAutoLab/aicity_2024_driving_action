@@ -7,13 +7,13 @@ This repository contains the source code for AI City Challenge 2024 Track 3 (Nat
 
 ## 1. Setup
 ### 1.1 Run from conda (for both training and inference)
-#### Using environment.yml
+#### 1.1.1 Using environment.yml
 ```
 conda env create --name track3 --file=environment.yml
 conda activate track3
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 ```
-#### Using requirements.txt
+#### 1.1.2 Using requirements.txt
 ```
 conda create --name track3 python=3.10.13
 conda activate track3
@@ -52,8 +52,8 @@ To get UniformerV2_2 weights, please download them from this [link](https://driv
 
 To get VideoMAE weights, please download them from this [link](https://drive.google.com/file/d/14KZPd5kHw0kNzQZi0DFF-8AfXeE3DSZa/view?usp=sharing). After downloading, extract the file and put it to the folder VideoMAE_train.
 
-## 3. Dataset structure
-### 3.1 X3D
+## 4. Dataset structure
+### 4.1 X3D
 For X3D model, the dataset is organized with the following structure:
 ```
 X3D_train
@@ -75,7 +75,7 @@ X3D_train
 |  |_ *.pyth
 ```
 
-### 3.2 UniformerV2_1
+### 4.2 UniformerV2_1
 For UniformerV2_1 model, the dataset is organized with the following structure:
 ```
 UniformerV2_1_train
@@ -109,7 +109,7 @@ UniformerV2_1_train
 |  |  |_ vit_l14_336.pth
 ```
 
-### 3.3 UniformerV2_2
+### 4.3 UniformerV2_2
 For UniformerV2_2 model, the dataset is organized with the following structure:
 ```
 UniformerV2_2_train
@@ -143,7 +143,7 @@ UniformerV2_2_train
 |  |  |_ vit_l14_336.pth
 ```
 
-### 3.4 VideoMAE
+### 4.4 VideoMAE
 For VideoMAE model, the dataset is organized with the following structure:
 ```
 VideoMAE_train
@@ -162,8 +162,8 @@ VideoMAE_train
 |  |_ vit_l_hybrid_pt_800e_k700_ft.pth
 ```
 
-## 4. Usage
-### 4.1 X3D
+## 5. Usage
+### 5.1 X3D
 To train X3D, follow the code snippets bellow:
 ```bash
 cd X3D_train
@@ -174,7 +174,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 4.2 UniformerV2_1
+#### 5.2 UniformerV2_1
 To train UniformerV2_1, follow the code snippets bellow:
 ```bash
 cd UniformerV2_1_train
@@ -185,7 +185,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 4.3 UniformerV2_2
+#### 5.3 UniformerV2_2
 To train UniformerV2_2, follow the code snippets bellow:
 ```bash
 cd UniformerV2_2_train
@@ -196,7 +196,7 @@ python move_ckpt.py
 cd ..
 ```
 
-#### 4.4 VideoMAE
+#### 5.4 VideoMAE
 To train VideoMAE, follow the code snippets bellow:
 ```bash
 cd VideoMAE_train
@@ -211,7 +211,7 @@ python move_ckpt.py
 cd ..
 ```
 
-### 5. Ensemble model
+### 6. Ensemble model
 To ensemble four models, run the following scripts:
 ```bash
 bash scripts/run_infer_x3d.sh
@@ -221,7 +221,7 @@ bash scripts/run_infer_videomae.sh
 bash scripts/run_infer_all.sh # copy all checkpoints to the infer folder and create the submission file
 ```
 
-## 6. Citation
+## 7. Citation
 If you find our work useful, please cite the following:
 ```
 @inproceedings{nguyen2024multi,
@@ -233,10 +233,10 @@ If you find our work useful, please cite the following:
 }
 ```
 
-## 7. Contact
-If you have any questions, feel free to contact `Huy H. Nguyen` ([huyhung411991@gmail.com](huyhung411991@gmail.com)), `Chi D. Tran` ([ctran743@gmail.com](ctran743@gmail.com)) or `Automation Lab` ([automation.skku@gmail.com](automation.skku@gmail.com)).
+## 8. Contact
+If you have any questions, feel free to contact `Huy H. Nguyen` ([huyhung411991@gmail.com](huyhung411991@gmail.com)) or `Chi D. Tran` ([ctran743@gmail.com](ctran743@gmail.com)).
 
-##  8. Acknowledgement
+##  9. Acknowledgement
 Our framework is built using multiple open source, thanks for their great contributions.
 <!--ts-->
 * [VTCC-uTVM/2022AICityChallenge-Track3](https://github.com/VTCC-uTVM/2022AICityChallenge-Track3)
