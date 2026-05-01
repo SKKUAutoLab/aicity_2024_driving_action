@@ -1,4 +1,32 @@
+# general ignore
 __pycache__/
+.idea
+*.pt
+*.pth
+*.pyth
+*.bin
+*.safetensors
+*.mat
+*.xyz
+*.npy
+*.npz
+*.csv
+*.so
+*.egg
+*.mp4
+*.tar
+*.gz
+*.tar.gz
+*.pkl
+*.h5ad
+*.pckl
+*.ckpt
+*.pts
+*.DS_Store
+*.rrd
+*.ruff_cache
+
+# ignore model folders
 VideoMAE_train/pretrained_models
 UniformerV2_2_train/k710_uniformerv2_l14_8x336.pyth
 UniformerV2_2_train/vit_saved
